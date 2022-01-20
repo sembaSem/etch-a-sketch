@@ -1,0 +1,8 @@
+#container {
+    height: 600px;
+    width: 600px;
+    border: solid black 1px;
+    display: grid;
+    grid-template-columns: repeat(16, 1fr);
+    grid-template-rows: repeat(16, 1fr);
+}
