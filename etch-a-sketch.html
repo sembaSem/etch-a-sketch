@@ -8,14 +8,12 @@
     <link rel="stylesheet" href="etch-a-sketch.css">
 </head>
 <body>
-    <div id="container"></div>
-
-    <input type="number" id="quantity">
     <button id="reset">Reset</button>
+
+    <div id="container"></div>
 
     <script>
         const grid = document.getElementById('container');
-        const input = document.getElementById('quantity');
         const reset = document.getElementById('reset');
 
         //make grid visible
@@ -34,17 +32,27 @@
             stroke.target.classList.replace('square', 'color');
         });
 
-        //reset grid to 32
+        //reset grid to number <=100
         function resetGrid() {
-            grid.innerText = "";
-            grid.style.setProperty('grid-template-columns', `repeat(32, 1fr)`);
-            grid.style.setProperty('grid-template-rows', `repeat(32, 1fr)`);
+            let input = prompt('How many squares per side?');
+            let value = parseInt(input);
+            console.log(value);
 
-            for (let i = 0; i < 1024; i++) {
-            const square = document.createElement('div');
-            square.classList.add('square');
-            grid.appendChild(square);  
-            } 
+            if (value > 100) {
+                alert('Please set number to 100 or less.');
+            } else if (value <= 100) {
+                grid.innerText = "";
+                grid.style.setProperty('grid-template-columns', `repeat(${value}, 1fr)`);
+                grid.style.setProperty('grid-template-rows', `repeat(${value}, 1fr)`);
+
+                for (let i = 0; i < (value * value); i++) {
+                const square = document.createElement('div');
+                square.classList.add('square');
+                grid.appendChild(square);  
+                } 
+            } else {
+                alert('No number was given.')
+            }
         }
 
         reset.addEventListener('click', resetGrid);
