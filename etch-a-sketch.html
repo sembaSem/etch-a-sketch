@@ -25,6 +25,11 @@
         }
         createGrid();
 
+        const color = document.querySelector('div');
+        color.addEventListener('mouseover', function(stroke) {
+            stroke.target.classList.replace('square', 'color');
+        });
+
     </script>
 </body>
 </html>

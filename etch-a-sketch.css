@@ -8,10 +8,10 @@
 }
 .square {
     background-color: white;
-    border: solid grey 1px;
+    border: solid black 1px;
 }
 
 .color {
     background-color: grey;
-    border: solid grey 1 px;
+    border: solid black 1 px;
 }
