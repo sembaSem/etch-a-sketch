@@ -1,8 +1,17 @@
 #container {
     height: 600px;
     width: 600px;
-    border: solid black 1px;
+    border: solid black 5px;
     display: grid;
     grid-template-columns: repeat(16, 1fr);
     grid-template-rows: repeat(16, 1fr);
+}
+.square {
+    background-color: white;
+    border: solid grey 1px;
+}
+
+.color {
+    background-color: grey;
+    border: solid grey 1 px;
 }

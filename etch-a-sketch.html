@@ -10,10 +10,21 @@
 <body>
     <div id="container"></div>
 
+    <input type="number" id="quantity">
     <button id="reset">Reset</button>
 
     <script>
-        
+        const grid = document.getElementById('container');
+
+        function createGrid() {
+            for (let i = 0; i < 256; i++) {
+            const square = document.createElement('div');
+            square.classList.add('square');
+            grid.appendChild(square);  
+            } 
+        }
+        createGrid();
+
     </script>
 </body>
 </html>
