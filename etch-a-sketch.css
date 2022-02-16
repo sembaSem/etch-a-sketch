@@ -1,3 +1,22 @@
+body {
+    background: linear-gradient(90deg, coral, yellow);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#box {
+    margin: 0 auto;
+    display: flex;
+    width: 90vw;
+    justify-content: space-between;
+}
+
+#block {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    width: 20vw;
+}
+
 #container {
     height: 600px;
     width: 600px;

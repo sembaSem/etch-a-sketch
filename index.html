@@ -8,9 +8,15 @@
     <link rel="stylesheet" href="etch-a-sketch.css">
 </head>
 <body>
-    <button id="reset">Reset</button>
+    <div id="box">
+        <div id="block">
+            <div id="message">Press the button to reset the etch-a-sketch and select how many squares there are on each side.</div>
+            <!-- <input type="range" name="slider" id="slider" min="2" max="100"> -->
+            <button id="reset">Reset</button>
+        </div>
 
-    <div id="container"></div>
+        <div id="container"></div>
+    </div>
 
     <script>
         const grid = document.getElementById('container');
