@@ -1,6 +1,7 @@
 body {
-    background: linear-gradient(90deg, coral, yellow);
+    background: white;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
 }
 
 #box {

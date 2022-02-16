@@ -10,7 +10,7 @@
 <body>
     <div id="box">
         <div id="block">
-            <div id="message">Press the button to reset the etch-a-sketch and select how many squares there are on each side.</div>
+            <div id="message">Press the button to reset the etch-a-sketch and choose how many squares there are on each side.</div>
             <!-- <input type="range" name="slider" id="slider" min="2" max="100"> -->
             <button id="reset">Reset</button>
         </div>
@@ -22,21 +22,34 @@
         const grid = document.getElementById('container');
         const reset = document.getElementById('reset');
 
-        //make grid visible
+        // //make grid visible
+        // function createGrid() {
+        //     for (let i = 0; i < 256; i++) {
+        //     const square = document.createElement('div');
+        //     square.classList.add('square');
+        //     grid.appendChild(square);
+        //     }
+        // }
+        // createGrid();
+
+        // //coloring function
+        // const color = document.querySelector('div');
+        // color.addEventListener('mouseover', function(stroke) {
+        //     stroke.target.classList.replace('square', 'color');
+        // });
+
+        //grid that darkens each pass over
         function createGrid() {
             for (let i = 0; i < 256; i++) {
             const square = document.createElement('div');
-            square.classList.add('square');
-            grid.appendChild(square);  
-            } 
+            square.addEventListener('mouseover', function(pass) {
+                pass.target.style.backgroundColor ='black';
+                pass.target.style.opacity = (parseFloat(pass.target.style.opacity) || 0) + 0.2;
+            });
+            grid.appendChild(square);
+            }
         }
         createGrid();
-
-        //coloring function
-        const color = document.querySelector('div');
-        color.addEventListener('mouseover', function(stroke) {
-            stroke.target.classList.replace('square', 'color');
-        });
 
         //reset grid to number <=100
         function resetGrid() {
@@ -53,7 +66,11 @@
 
                 for (let i = 0; i < (value * value); i++) {
                 const square = document.createElement('div');
-                square.classList.add('square');
+                //square.classList.add('square');
+                square.addEventListener('mouseover', function(pass) {
+                pass.target.style.backgroundColor ='black';
+                pass.target.style.opacity = (parseFloat(pass.target.style.opacity) || 0) + 0.2;
+                });
                 grid.appendChild(square);  
                 } 
             } else {
