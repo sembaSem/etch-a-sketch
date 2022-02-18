@@ -3,6 +3,11 @@ body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+button {
+    width: 100px;
+    margin: 0 auto;
+}
+
 #box {
     margin: 0 auto;
     display: flex;
@@ -11,7 +16,7 @@ body {
 }
 
 #block {
-    margin: auto;
+    margin: 10vh auto;
     display: flex;
     flex-direction: column;
     gap: 1em;
@@ -34,4 +39,9 @@ body {
 .color {
     background-color: grey;
     border: solid black 1px;
+}
+
+#output {
+    font-size: 30px;
+    text-align: center;
 }
