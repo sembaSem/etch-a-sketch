@@ -12,9 +12,14 @@
     <div id="box">
         <div id="block">
             <h2><u><em>Etch A Sketch</em></u></h2>
-            <div id="message">Use the slider to choose your number of squares, then press the button to reset the "sketchpad".</div>
+            <div id="message">Use the slider to choose your number of squares, pick a color, then press the button to reset the "sketchpad".</div>
             <div id="output"></div>
             <input type="range" name="slider" id="slider" min="2" max="100" oninput="sliderChange(this.value)">
+            <div id="chooseColor"> 
+                <label for="color">Pick a color:</label>
+                <input type="color" name="color" id="color" oninput="pickColor(this.value)">
+            </div>
+
             <button id="reset">Reset</button>
         </div>
 

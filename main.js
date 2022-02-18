@@ -17,13 +17,6 @@ const reset = document.getElementById('reset');
 //     stroke.target.classList.replace('square', 'color');
 // });
 
-//display slider value
-function sliderChange(val) {
-    document.getElementById('output').innerHTML = `${val}x${val}`;
-}
-document.getElementById('slider').value = 16;
-sliderChange(16);
-
 //grid that darkens each pass over
 function createGrid() {
     for (let i = 0; i < 256; i++) {
@@ -65,9 +58,17 @@ createGrid();
 // }
 // reset.addEventListener('click', resetGrid);
 
+//display slider value
+function sliderChange(val) {
+    document.getElementById('output').innerText = `${val}x${val}`;
+}
+document.getElementById('slider').value = 16;
+sliderChange(16);
+
 //reset grid using slider
 function resetSlider() {
     let value = document.getElementById('slider').value;
+    let color = document.getElementById('color').value;
 
     grid.innerText = "";
     grid.style.setProperty('grid-template-columns', `repeat(${value}, 1fr)`);
@@ -77,10 +78,15 @@ function resetSlider() {
         const square = document.createElement('div');
         //square.classList.add('square');
         square.addEventListener('mouseover', function(pass) {
-            pass.target.style.backgroundColor ='black';
+            pass.target.style.backgroundColor = color;
             pass.target.style.opacity = (parseFloat(pass.target.style.opacity) || 0) + 0.2;
         });
         grid.appendChild(square);
     }
 }
 reset.addEventListener('click', resetSlider);
+
+// //display color choice
+// function pickColor(val) {
+//     document.getElementById('showColor').innerText = `${val}`;
+// }

@@ -42,6 +42,13 @@ button {
 }
 
 #output {
+    margin-top: 1em;
     font-size: 30px;
     text-align: center;
+}
+
+#chooseColor {
+    display: inline-block;
+    margin-left: 1.2em;
+    margin-bottom: 1em;
 }
